@@ -1,4 +1,6 @@
 # P.M3v1
 Proyecto del módulo 3 en el cual se utilizará un data set del enfermedades cardiovasculares
 
-![kenny-eliason-MEbT27ZrtdE-unsplash](https://github.com/user-attachments/assets/06981390-3c22-4d3f-b0cd-096eb987a4b7)
+
+![heart](https://github.com/user-attachments/assets/67149e43-7176-4d68-9770-3e66cf248523)
+
