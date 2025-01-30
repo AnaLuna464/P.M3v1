@@ -9,7 +9,8 @@ import numpy as np
 import plotly as px
 
 # Data import and Pandas dataframe (CVD_cleaned.xlsx)
-df = pd.read_xlsx('CVD_cleaned.xlsx')
+df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl")  
+
 
 #Configuration to set the page title, icon, layout and sidebar state
 st.set_page_config(
