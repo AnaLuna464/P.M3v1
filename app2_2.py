@@ -8,8 +8,8 @@ from PIL import Image
 import numpy as np
 import plotly as px
 
-# Data import and Pandas dataframe (CVD_cleaned.csv)
-df = pd.read_csv(r'C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\CVD_cleaned.csv')
+# Data import and Pandas dataframe (CVD_cleaned.xlsx)
+df = pd.read_xlsx('CVD_cleaned.xlsx')
 
 #Configuration to set the page title, icon, layout and sidebar state
 st.set_page_config(
@@ -119,7 +119,7 @@ if menu_option == "Introduction":
     """)
 
     # Image upload
-    image_path = r"C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\Heart_blue_red.jpeg"
+    image_path = r"Heart_blue_red.jpeg"
     try:
         image = Image.open(image_path)
         st.image(image, caption="Heart visualization", use_container_width=True)
