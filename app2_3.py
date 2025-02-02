@@ -16,7 +16,8 @@ import json
 
 
 # Data import and Pandas dataframe (CVD_cleaned.xlsx)
-df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl") 
+df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl") esto es lo que se tiene que poner para estar publico
+#df = pd.read_csv(r'C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\CVD_cleaned.csv')
 
 #Configuration to set the page title, icon, layout and sidebar state
 st.set_page_config(
@@ -199,10 +200,10 @@ if sub_menu_option == "Hospital Data":
 
 # Remove the duplicated if statement
     
-     st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
+    st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
 
     #Image 2 "Relationship between smokers and gender"
-      # Image upload
+    # Image upload
     image_path = r"Img2.Smokers by gender.png"
     try:
         image = Image.open(image_path)
@@ -561,6 +562,3 @@ Restecg refers to the results of an electrocardiogram (ECG) taken while the pati
 •	2: Left ventricular hypertrophy – This value indicates signs of hypertrophy (thickening) in the left ventricle of the heart, which may be caused by high blood pressure or heart disease. Left ventricular hypertrophy is an important finding, as it may indicate heart failure or an increased cardiovascular risk.
 
 Thalach = Maximum heart rate achieved''')
-
-
-
