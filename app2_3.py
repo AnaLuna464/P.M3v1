@@ -18,11 +18,8 @@ import geopandas as gpd
 from wordcloud import WordCloud
 pd.options.display.float_format = '{:.2f}'.format
 
-# Data import and Pandas dataframe (CVD_cleaned.csv)
-df = pd.read_csv(r'C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\CVD_cleaned.csv')
-
-#Data import EDA_Paula.ipynb changes to csv
-df1=pd.read_csv(r'C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\EDA\cardio_data_cleaned.csv')
+# Data import and Pandas dataframe (CVD_cleaned.xlsx)
+df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl") 
 
 #Configuration to set the page title, icon, layout and sidebar state
 st.set_page_config(
@@ -188,14 +185,7 @@ elif sub_menu_option == "Hospital Data":
     """)
 
     #Image 1 "Relationship between age and cardiovascular disease"
-    image_path = r"C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\EDA\Images EDA_Paula\Img1. Relationship between age and cvd.png"
-    try:
-        image = Image.open(image_path)
-        st.image(image, caption="Relationship between age and cardiovascular disease", use_container_width=True)
-    except FileNotFoundError:
-        st.error("No se encontró el archivo en la ruta especificada.")
-    except Exception as e:
-        st.error(f"Error al cargar la imagen: {e}")
+    st.image('images/Img1. Relationship between age and cvd.png', caption='Relationship between age and cardiovascular diseases')
     
     
     st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
