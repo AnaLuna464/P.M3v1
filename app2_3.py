@@ -13,9 +13,7 @@ from matplotlib import ticker
 import plotly.graph_objects as go  
 import os 
 import json
-import geopandas as gpd 
-from wordcloud import WordCloud
-pd.options.display.float_format = '{:.2f}'.format
+
 
 # Data import and Pandas dataframe (CVD_cleaned.xlsx)
 df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl") 
