@@ -152,12 +152,12 @@ if sub_menu_option == "Hospital Data":
     st.title("📊 Hospital Data")
     st.write("## General information of the dataset")
     # Descripción del dataset
-    st.write("""
+    st.write('''
     ### Data description
     There are 3 types of input features:
     - **Objective**: Factual information  
     - **Examination**: Results of medical examination  
-    - **Subjective**: Information given by the patient  
+    - **Subjective**: Information given by the patient.  
 
     **Features:**
     - **Age** | Objective Feature | int (days)  
@@ -172,7 +172,7 @@ if sub_menu_option == "Hospital Data":
     - **Alcohol intake** | Subjective Feature | alco | binary  
     - **Physical activity** | Subjective Feature | active | binary  
     - **Cardiovascular disease** | Target Variable | cardio | binary  
-    """)
+    ''')
 
     # Introducción al dataset
     st.write("""
@@ -183,7 +183,7 @@ if sub_menu_option == "Hospital Data":
     """)
 
     # Image 1 "Relationship between age and cardiovascular disease"
-    image_path = r"Img1. Relationship between age and cvd.png"
+    image_path = r"Img1. Relationship between age and cvd.jpeg"
     try:
         image = Image.open(image_path)
         st.image(image, caption="Relationship between age and cardiovascular disease", use_container_width=True)
