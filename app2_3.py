@@ -147,7 +147,7 @@ if sub_menu_option == "PBI":
         src="{powerbi_url}" frameborder="0" allowFullScreen="true"></iframe>
     """, unsafe_allow_html=True)
 
-elif sub_menu_option == "Hospital Data":
+if sub_menu_option == "Hospital Data":
     st.title("📊 Hospital Data")
     st.write("## General information of the dataset")
     # Descripción del dataset
@@ -181,8 +181,23 @@ elif sub_menu_option == "Hospital Data":
     The data includes a wide range of variables that capture vital signs, medical history, lifestyle factors, and laboratory results, which can be used to identify patterns and correlations with cardiovascular disease risk. 
     """)
 
-    #Image 1 "Relationship between age and cardiovascular disease"
+    # Image 1 "Relationship between age and cardiovascular disease"
+    image_path = r"Img1. Relationship between age and cvd.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Relationship between age and cardiovascular disease", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
 
+    st.write('''
+    The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with...
+    ''')
+    
+
+
+# Remove the duplicated if statement
     
      st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
 
