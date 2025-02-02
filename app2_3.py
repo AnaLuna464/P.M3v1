@@ -182,36 +182,75 @@ elif sub_menu_option == "Hospital Data":
     """)
 
     #Image 1 "Relationship between age and cardiovascular disease"
-    st.image('images/Img1. Relationship between age and cvd.png', caption='Relationship between age and cardiovascular diseases')
+
     
-    
-    st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
+     st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
 
     #Image 2 "Relationship between smokers and gender"
-    image_path = r"C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\EDA\Images EDA_Paula\Img2. Relationship between smokers and gender.png"
+      # Image upload
+    image_path = r"Img2.Smokers by gender.png"
     try:
         image = Image.open(image_path)
-        st.image(image, caption="Relationship between smokers and gender", use_container_width=True)
+        st.image(image, caption="Heart visualization", use_container_width=True)
     except FileNotFoundError:
         st.error("No se encontró el archivo en la ruta especificada.")
     except Exception as e:
         st.error(f"Error al cargar la imagen: {e}")
+        
     st.write('''The graph indicates that men have a higher proportion of smokers compared to women. Since smoking is a significant risk factor for cardiovascular diseases, this suggests that men may be at a higher risk for developing such conditions due to their higher smoking rates. This gender difference in smoking behavior could contribute to disparities in cardiovascular health between men and women.''')
 
 #Image 3 "Relacion entre peso y presion diastolica"
+        # Image upload
+    image_path = r"Img3.Weight and diastolic pressure.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Weight and diastolic pressure", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
+        
     st.write('''The graph titled "Relationship between Weight and Diastolic Pressure" examines the connection between weight ranges (0-50, 50-60, 60-70, 70-80, 80-90) and diastolic blood pressure categories (Normal, Low, Hypotension, Emergency).
         From the graph, it appears that as weight increases, there is a trend towards higher diastolic blood pressure. Individuals in higher weight ranges (70-90) are more likely to fall into the "Normal" or potentially "Emergency" diastolic pressure categories, while those in lower weight ranges (0-60) are more associated with "Low" or "Hypotension."
         This suggests that higher weight may be linked to increased diastolic blood pressure, which is a risk factor for cardiovascular diseases. Maintaining a healthy weight could be important for managing blood pressure and reducing cardiovascular risk.''')
     
         
 #Image 4 " Relacion entre colesterol y glucosa"
+        # Image upload
+    image_path = r"Img4. Relationship between cholesterol and glucose.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Relationship between cholesterol and glucose", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
+        
     st.write('''From the graph, it is evident that as glucose levels increase from category 1 to category 3, cholesterol levels also tend to rise. 
             This positive correlation suggests that individuals with higher glucose levels are more likely to have elevated cholesterol levels. 
             Both high glucose (indicative of diabetes or prediabetes) and high cholesterol are significant risk factors for cardiovascular diseases, including heart attacks and strokes.
             This relationship underscores the interconnected nature of metabolic health. Poor glucose control can lead to dyslipidemia (abnormal cholesterol levels), and both conditions contribute to the development of atherosclerosis (plaque buildup in arteries). Managing diet, exercise, and medications to control both glucose and cholesterol levels is crucial for reducing cardiovascular risk. Regular monitoring and lifestyle modifications are essential for individuals with elevated levels of either parameter to prevent long-term health complications.''')
 
 #Image 5 "Distribucion de la presion diastólica con respecto al genero"
+            # Image upload
+    image_path = r"Img5. Diastolic pressure by gender.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Diastolic pressure by gender", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
 #Image 6  "Distribucion de la presion sistolica con respecto al genero"
+            # Image upload
+    image_path = r"Img6. Sistolic pressure by gender.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Sistolic pressure by gender", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
 
     st.write('''
     ### Combined Conclusions by Gender:
@@ -228,6 +267,16 @@ While they tend to have lower diastolic and systolic pressure levels, continuous
 Promoting healthy habits and regular health monitoring can help maintain overall cardiovascular health.''')
     
     #Image 7 "Cantidad de valores por rango de presion sistolica"
+            # Image upload
+    image_path = r"Img7. Sistolic pressure range.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Sistolic pressure range", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
+        
     st.write('''
     ### Key Observations:
 Distribution of Values:
@@ -249,6 +298,16 @@ For individuals in the Elevated and Hypertension Stage 1 ranges, lifestyle modif
 Individuals in the Hypertension Stage 2 and Emergency ranges likely require medical treatment, including antihypertensive medications and regular monitoring.''')
     
     #Image 8 " Cantidad de valores por rangos de presion diastolica
+            # Image upload
+    image_path = r"Img8. Distolic pressure range.png"
+    try:
+        image = Image.open(image_path)
+        st.image(image, caption="Distolic pressure range", use_container_width=True)
+    except FileNotFoundError:
+        st.error("No se encontró el archivo en la ruta especificada.")
+    except Exception as e:
+        st.error(f"Error al cargar la imagen: {e}")
+        
     st.write('''Analysis by Diastolic Pressure Range: Normal Range:
 
 This category represents individuals with healthy diastolic blood pressure levels.
