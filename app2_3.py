@@ -126,7 +126,7 @@ if menu_option == "Introduction":
     """)
 
     # Image upload
-    image_path = r"C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\Heart_blue_red.jpeg"
+    image_path = r"Heart_blue_red.jpeg"
     try:
         image = Image.open(image_path)
         st.image(image, caption="Heart visualization", use_container_width=True)
