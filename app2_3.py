@@ -10,8 +10,7 @@ import plotly as px
 import plotly.express as px 
 import math as e
 from matplotlib import ticker
-import plotly.graph_objects as go 
-import chart_studio.plotly as py    
+import plotly.graph_objects as go  
 import os 
 import json
 import geopandas as gpd 
