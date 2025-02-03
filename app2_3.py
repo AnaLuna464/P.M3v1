@@ -160,18 +160,18 @@ if sub_menu_option == "Hospital Data":
     - **Subjective**: Information given by the patient.  
 
     **Features:**
-    - **Age** | Objective Feature | int (days)  
-    - **Height** | Objective Feature | int (cm)  
-    - **Weight** | Objective Feature | float (kg)  
-    - **Gender** | Objective Feature | categorical code | (1 = female, 2 = male)  
-    - **Systolic blood pressure** | Examination Feature | ap_hi | int  
-    - **Diastolic blood pressure** | Examination Feature | ap_lo | int  
-    - **Cholesterol** | Examination Feature | 1: normal, 2: above normal, 3: well above normal  
-    - **Glucose** | Examination Feature | 1: normal, 2: above normal, 3: well above normal  
-    - **Smoking** | Subjective Feature | smoke | binary  
-    - **Alcohol intake** | Subjective Feature | alco | binary  
-    - **Physical activity** | Subjective Feature | active | binary  
-    - **Cardiovascular disease** | Target Variable | cardio | binary  
+    - **Age**   
+    - **Height** | (cm)  
+    - **Weight** | (kg)  
+    - **Gender** | (1 = female, 2 = male)  
+    - **Systolic blood pressure**  
+    - **Diastolic blood pressure**  
+    - **Cholesterol** | 1: normal, 2: above normal, 3: well above normal  
+    - **Glucose** | 1: normal, 2: above normal, 3: well above normal  
+    - **Smoking** 
+    - **Alcohol intake** 
+    - **Physical activity**   
+    - **Cardiovascular disease**  
     ''')
 
     # Introducción al dataset
@@ -197,11 +197,6 @@ if sub_menu_option == "Hospital Data":
     ''')
     
 
-
-# Remove the duplicated if statement
-    
-    st.write('''The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.''')
-
     #Image 2 "Relationship between smokers and gender"
     # Image upload
     image_path = r"Img2. Smokers by gender.png"
@@ -226,9 +221,9 @@ if sub_menu_option == "Hospital Data":
     except Exception as e:
         st.error(f"Error al cargar la imagen: {e}")
         
-    st.write('''The graph titled "Relationship between Weight and Diastolic Pressure" examines the connection between weight ranges (0-50, 50-60, 60-70, 70-80, 80-90) and diastolic blood pressure categories (Normal, Low, Hypotension, Emergency).
+    st.write('''This graph examines the connection between weight ranges (0-50, 50-60, 60-70, 70-80, 80-90) and diastolic blood pressure categories (Normal, Low, Hypotension, Emergency).
         From the graph, it appears that as weight increases, there is a trend towards higher diastolic blood pressure. Individuals in higher weight ranges (70-90) are more likely to fall into the "Normal" or potentially "Emergency" diastolic pressure categories, while those in lower weight ranges (0-60) are more associated with "Low" or "Hypotension."
-        This suggests that higher weight may be linked to increased diastolic blood pressure, which is a risk factor for cardiovascular diseases. Maintaining a healthy weight could be important for managing blood pressure and reducing cardiovascular risk.''')
+        This suggests that higher weight may be linked to increased diastolic blood pressure, which is a risk factor for cardiovascular diseases.''')
     
         
 #Image 4 " Relacion entre colesterol y glucosa"
@@ -242,10 +237,10 @@ if sub_menu_option == "Hospital Data":
     except Exception as e:
         st.error(f"Error al cargar la imagen: {e}")
         
-    st.write('''From the graph, it is evident that as glucose levels increase from category 1 to category 3, cholesterol levels also tend to rise. 
+    st.write('''It is evident that as glucose levels increase from category 1 to category 3, cholesterol levels also tend to rise. 
             This positive correlation suggests that individuals with higher glucose levels are more likely to have elevated cholesterol levels. 
             Both high glucose (indicative of diabetes or prediabetes) and high cholesterol are significant risk factors for cardiovascular diseases, including heart attacks and strokes.
-            This relationship underscores the interconnected nature of metabolic health. Poor glucose control can lead to dyslipidemia (abnormal cholesterol levels), and both conditions contribute to the development of atherosclerosis (plaque buildup in arteries). Managing diet, exercise, and medications to control both glucose and cholesterol levels is crucial for reducing cardiovascular risk. Regular monitoring and lifestyle modifications are essential for individuals with elevated levels of either parameter to prevent long-term health complications.''')
+            Poor glucose control can lead to dyslipidemia (abnormal cholesterol levels), and both conditions contribute to the development of atherosclerosis (plaque buildup in arteries).''')
 
 #Image 5 "Distribucion de la presion diastólica con respecto al genero"
             # Image upload
@@ -279,8 +274,7 @@ Implementing specific preventive and management strategies, such as regular heal
 - Women:
 
 While they tend to have lower diastolic and systolic pressure levels, continuous monitoring is essential to ensure early detection of any significant changes, especially during critical life stages like pregnancy or menopause.
-
-Promoting healthy habits and regular health monitoring can help maintain overall cardiovascular health.''')
+''')
     
     #Image 7 "Cantidad de valores por rango de presion sistolica"
             # Image upload
@@ -307,11 +301,7 @@ A high number of values in the Hypertension ranges (Stage 1 and Stage 2) suggest
 
 A high number of values in the Emergency range would indicate a critical need for immediate medical interventions and public health campaigns.
 
-Intervention Strategies:
-
-For individuals in the Elevated and Hypertension Stage 1 ranges, lifestyle modifications such as diet, exercise, and stress management are crucial.
-
-Individuals in the Hypertension Stage 2 and Emergency ranges likely require medical treatment, including antihypertensive medications and regular monitoring.''')
+''')
     
     #Image 8 " Cantidad de valores por rangos de presion diastolica
             # Image upload
@@ -328,25 +318,22 @@ Individuals in the Hypertension Stage 2 and Emergency ranges likely require medi
 
 This category represents individuals with healthy diastolic blood pressure levels.
 
-The graph shows 13,916 values in this range, indicating that a significant portion of the population has well-controlled diastolic pressure.
 
-Baja (Low) Range:
+Low Range:
 
 This category includes individuals with slightly lower than normal diastolic pressure.
 
-The exact number of values is not provided, but it is likely lower than the Normal range.
 
-Hipotensión (Hypotension):
+Hypotension:
 
 This range represents abnormally low diastolic blood pressure, which can cause symptoms like dizziness and fainting.
 
-The graph shows 176 values in this range, indicating a small but notable portion of the population with hypotension.
 
-Emergencia (Emergency):
+Emergency:
 
 This category represents critically low diastolic pressure levels requiring immediate medical attention.
 
-The graph shows 47 values in this range, indicating a small number of individuals in a critical health state.''')
+''')
     
     st.write('''
     ### Key observations 2:
@@ -354,25 +341,18 @@ Distribution of Values:
 
 The majority of values fall within the Normal range (13,916), suggesting that most of the population has healthy diastolic blood pressure levels.
 
-A smaller number of values are in the Hipotensión (176) and Emergencia (47) ranges, indicating a minor but significant portion of the population with low or critically low diastolic pressure.
+A smaller number of values are in Hypotension (176) and Emergency (47) ranges, indicating a minor but significant portion of the population with low or critically low diastolic pressure.
 
 Health Implications:
 
-A high number of values in the Normal range is a positive sign, indicating good cardiovascular health for most individuals.
-
-The presence of values in the Hipotensión and Emergencia ranges highlights the need for medical attention for those with abnormally low diastolic pressure, as it can lead to complications like organ damage or shock.
+The presence of values in the Hypotension and Emergency ranges highlights the need for medical attention for those with abnormally low diastolic pressure, as it can lead to complications like organ damage or shock.
 
 Intervention Strategies:
 
-For individuals in the Baja and Hipotensión ranges, lifestyle adjustments such as increased fluid intake, dietary changes, and monitoring for symptoms like dizziness are important.
+For individuals in the Low and Hypotension ranges, lifestyle adjustments such as increased fluid intake, dietary changes, and monitoring for symptoms like dizziness are important.
 
-Individuals in the Emergencia range require immediate medical intervention to stabilize their blood pressure and prevent further complications.
-
-Conclusion: The graph provides a clear picture of the distribution of diastolic blood pressure across different ranges within a population. It highlights that while most individuals have healthy diastolic pressure levels, there is a small but significant portion of the population with low or critically low diastolic pressure.
-
-Most values are in the Normal range: This indicates good overall cardiovascular health for the majority of the population.
-
-Presence of values in Hipotensión and Emergencia ranges: This underscores the need for targeted interventions to address low diastolic pressure and prevent potential health complications.''')
+Individuals in the Emergency range require immediate medical intervention to stabilize their blood pressure and prevent further complications.
+''')
 
 
 
@@ -522,8 +502,10 @@ if menu_option == "Prediction Model Dictionary":
     - 2: Flat (neutral, not particularly concerning).
     - 3: Downsloping (which can be indicative of a higher risk of heart problems).
 •	Ca (Number of major vessels colored by fluoroscopy): This value indicates how many of the main coronary arteries show significant blockages during an imaging test, such as fluoroscopy. It is a numerical value: 
+    
     - 0: No blockage observed.
     - 1, 2, or 3: Indicates increasing degrees of obstruction in the coronary arteries.
+    
 •	Thal (Thalassemia or defect in myocardial perfusion): Refers to a diagnosis of thalassemia (a blood disorder) or a defect in myocardial perfusion (blood flow to the heart). 
 
     - 3: Normal (no defects).
@@ -540,7 +522,7 @@ if menu_option == "Prediction Model Dictionary":
     A higher maximum heart rate can indicate better cardiovascular fitness, while a low maximum heart rate may signal potential heart issues.''')
 
     st.write('''
-    ### Impportant terminology:
+    ### Important terminology:
 Gender = 1 male, 0 female
              
 CP = Chest Pain type
@@ -553,12 +535,4 @@ Fbs = Fasting blood sugar > 120 mg/dl (1 = true; 0 = false)
              
 Restecg = Resting electrocardiographic results (values 0, 1, 2)
              
-Restecg refers to the results of an electrocardiogram (ECG) taken while the patient is at rest. It measures the electrical activity of the heart while the patient is at rest, before performing any physical exertion or stress test. The possible values are:
-
-•	0: Normal – The electrocardiogram shows no abnormalities in the heart’s electrical activity while the patient is at rest. This indicates that, at that moment, there are no signs of heart problems.
-
-•	1: ST-T wave abnormalities – This suggests that there are changes in the ST-T segment of the ECG, which could indicate myocardial ischemia or issues with blood flow to the heart. These abnormalities could be signs that the heart is not receiving enough oxygen, even at rest.
-
-•	2: Left ventricular hypertrophy – This value indicates signs of hypertrophy (thickening) in the left ventricle of the heart, which may be caused by high blood pressure or heart disease. Left ventricular hypertrophy is an important finding, as it may indicate heart failure or an increased cardiovascular risk.
-
 Thalach = Maximum heart rate achieved''')
