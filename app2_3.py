@@ -305,7 +305,7 @@ A high number of values in the Emergency range would indicate a critical need fo
     
     #Image 8 " Cantidad de valores por rangos de presion diastolica
             # Image upload
-    image_path = r"Img8. Distolic pressure range.png"
+    image_path = r"Img8. Diastolic pressure range.png"
     try:
         image = Image.open(image_path)
         st.image(image, caption="Distolic pressure range", use_container_width=True)
