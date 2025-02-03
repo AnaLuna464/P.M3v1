@@ -1,4 +1,30 @@
-# P.M3v1
+# P.M3v1 (ING)
+
+# 🏥 Cardiovascular Diseases - Final Project 🩺
+
+## 📖 Description
+
+This repository contains the final project for the **Data Analysis Bootcamp**, where the acquired knowledge is applied to analyze cardiovascular diseases. 
+
+The aim of the project is to explore, process and model data related to cardiovascular diseases in order to obtain valuable information and generate data-driven conclusions to assist nurses and medical students.
+
+## 🎯 Project Objectives
+
+✅ Apply data cleaning and manipulation techniques.  
+✅ Visualize patterns and trends in the dataset.  
+✅ Implement Machine Learning models to predict cardiovascular diseases.  
+✅ Evaluate model performance and extract key insights.  
+
+## 🛠️ Technologies & Tools
+
+- **Programming Language**: Python 🐍  
+- **Main Libraries**: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn  
+- **Jupyter Notebook** for analysis and modeling
+- **Power Bi** for data visualization 
+- **GitHub** for version control  
+- **Dash / Streamlit (optional)** for interactive visualizations
+  
+# P.M3v1 (ESP)
 
 # 🏥 Cardiovascular Diseases - Proyecto Final 🩺
 
