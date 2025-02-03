@@ -16,7 +16,7 @@ import json
 
 
 # Data import and Pandas dataframe (CVD_cleaned.xlsx)
-df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl") esto es lo que se tiene que poner para estar publico
+df = pd.read_excel("CVD_cleaned.xlsx", engine="openpyxl") #esto es lo que se tiene que poner para estar publico
 #df = pd.read_csv(r'C:\Users\annie\OneDrive\Escritorio\Bootcamp Analisis de Datos\Visual\Proyecto 3\CVD_cleaned.csv')
 
 #Configuration to set the page title, icon, layout and sidebar state
