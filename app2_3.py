@@ -204,10 +204,10 @@ if sub_menu_option == "Hospital Data":
 
     #Image 2 "Relationship between smokers and gender"
     # Image upload
-    image_path = r"Img2.Smokers by gender.png"
+    image_path = r"Img2. Smokers by gender.png"
     try:
         image = Image.open(image_path)
-        st.image(image, caption="Heart visualization", use_container_width=True)
+        st.image(image, caption="Smokers by gender", use_container_width=True)
     except FileNotFoundError:
         st.error("No se encontró el archivo en la ruta especificada.")
     except Exception as e:
@@ -217,7 +217,7 @@ if sub_menu_option == "Hospital Data":
 
 #Image 3 "Relacion entre peso y presion diastolica"
         # Image upload
-    image_path = r"Img3.Weight and diastolic pressure.png"
+    image_path = r"Img3. Weight and diastolic pressure.png"
     try:
         image = Image.open(image_path)
         st.image(image, caption="Weight and diastolic pressure", use_container_width=True)
