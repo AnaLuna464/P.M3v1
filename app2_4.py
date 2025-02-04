@@ -211,20 +211,6 @@ if sub_menu_option == "Hospital Data":
         
     st.write('''The graph indicates that men have a higher proportion of smokers compared to women. Since smoking is a significant risk factor for cardiovascular diseases, this suggests that men may be at a higher risk for developing such conditions due to their higher smoking rates. This gender difference in smoking behavior could contribute to disparities in cardiovascular health between men and women.''')
 
-#Image 3 "Relacion entre peso y presion diastolica"
-        # Image upload
-    image_path = r"Img3. Weight and diastolic pressure.png"
-    try:
-        image = Image.open(image_path)
-        st.image(image, caption="Weight and diastolic pressure", use_container_width=True)
-    except FileNotFoundError:
-        st.error("No se encontró el archivo en la ruta especificada.")
-    except Exception as e:
-        st.error(f"Error al cargar la imagen: {e}")
-        
-    st.write('''This graph examines the connection between weight ranges (0-50, 50-60, 60-70, 70-80, 80-90) and diastolic blood pressure categories (Normal, Low, Hypotension, Emergency).
-        From the graph, it appears that as weight increases, there is a trend towards higher diastolic blood pressure. Individuals in higher weight ranges (70-90) are more likely to fall into the "Normal" or potentially "Emergency" diastolic pressure categories, while those in lower weight ranges (0-60) are more associated with "Low" or "Hypotension."
-        This suggests that higher weight may be linked to increased diastolic blood pressure, which is a risk factor for cardiovascular diseases.''')
     
         
 #Image 4 " Relacion entre colesterol y glucosa"
