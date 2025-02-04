@@ -142,12 +142,12 @@ if menu_option == "Introduction":
 #Verify if the user selected "PBI" in the submenu
 if sub_menu_option == "PBI":
     st.title("🗺️ Power BI Dashboard")
-    powerbi_url = "https://app.powerbi.com/view?r=eyJrIjoiYzIwYjA5ODUtZTZkMS00ZGQwLWFjMTQtMWNiNTlhNzNlNDlhIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9"
+    #powerbi_url = "https://app.powerbi.com/view?r=eyJrIjoiYzIwYjA5ODUtZTZkMS00ZGQwLWFjMTQtMWNiNTlhNzNlNDlhIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9"
     #Just to show "PBI" when selected from the submenu
-    st.markdown(f"""
-        <iframe title="Mapa Power BI" width="900" height="600"
-        src="{powerbi_url}" frameborder="0" allowFullScreen="true"></iframe>
-    """, unsafe_allow_html=True)
+    #st.markdown(f"""
+        #<iframe title="Mapa Power BI" width="900" height="600"
+        #src="{powerbi_url}" frameborder="0" allowFullScreen="true"></iframe>
+    #""", unsafe_allow_html=True)
 
 if sub_menu_option == "Hospital Data":
     st.title("📊 Hospital Data")
