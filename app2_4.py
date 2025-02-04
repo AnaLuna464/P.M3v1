@@ -450,96 +450,95 @@ if sub_menu_option == "US Data":
 # Show prediction model
 if menu_option == "Prediction Model":
     st.write("### Prediction based on entered data")
-    columns_to_predict = st.multiselect("Select the information for the prediction model", df.columns)
-    target = st.selectbox("Select the target variable", df.columns)
     
+
    #PRIMERO LA URL QUE CONDUCE A NUESTRO MODELO MAS LA CLAVE API QUE NOS PERMITE ACCEDER A EL
-url = 'http://26639feb-ab23-4601-a19e-b8d6dcc1d173.eastus2.azurecontainer.io/score' # URL of the API
-api_key = 'oDJGJJz8PRmZB0e2IN5bSPiCvYUX1KEx'
+    url = 'http://26639feb-ab23-4601-a19e-b8d6dcc1d173.eastus2.azurecontainer.io/score' # URL of the API
+    api_key = 'oDJGJJz8PRmZB0e2IN5bSPiCvYUX1KEx'
 
 #FUNCION DE PREDICCION
-def get_prediction(data):
-    body = str.encode(json.dumps(data))
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
-    req = urllib.request.Request(url, body, headers)
+    def get_prediction(data):
+        body = str.encode(json.dumps(data))
+        headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+        req = urllib.request.Request(url, body, headers)
 
-    try:
-        response = urllib.request.urlopen(req)
-        result = response.read()
-        return json.loads(result)
-    except urllib.error.HTTPError as error:
-        print("The request failed with status code: " + str(error.code))
-        print(error.info())
-        print(json.loads(error.read()))
-        return None
+        try:
+            response = urllib.request.urlopen(req)
+            result = response.read()
+            return json.loads(result)
+        except urllib.error.HTTPError as error:
+            print("The request failed with status code: " + str(error.code))
+            print(error.info())
+            print(json.loads(error.read()))
+            return None
 
-#CONFIGURACION DE LA APP
-st.title('Heart disease prediction')
-st.write('This is a simple price prediction app')
-
-
-#DEFINIR LAS VARIABLES QUE NUESTRO MODELO CONOCE
-
-age = st.number_input('Age', min_value=1 , max_value=90, value=1)
-sex = st.selectbox('Sex', ['1', '0'])
-cp = st.selectbox('Chest pain', ['1', '2', '3', '4'])
-trestbps = st.number_input('Resting blood pressure', min_value=90, max_value=180, value=90)
-chol = st.number_input('Cholesterol', min_value=150, max_value=450, value=150)
-fbs = st.selectbox('Fasting blood sugar > 120 mg/dl', ['0', '1'])
-restecg = st.selectbox('Resting electrocardiographic results', ['0', '1', '2'])
-thalach = st.number_input('Maximum heart rate achieved', min_value=90, max_value=200, value=90)
-exang = st.selectbox('Exercise induced angina', ['0', '1'])
-oldpeak = st.number_input('ST depression induced by exercise relative to rest', min_value=0.0, max_value=6.2, value=0.1)
-slope = st.selectbox('The slope of the peak exercise ST segment', ['1', '2', '3'])
-ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy', ['0', '1', '2', '3'])
-thal = st.selectbox('Thalassemia', ['3', '6', '7'])
+    #CONFIGURACION DE LA APP
+    st.title('Heart disease prediction')
+    st.write('This is a simple price prediction app')
 
 
-#DICCIONARIO DE DATOS
-data = {
-    "Inputs": {
-        "input1": [
-            {
-                'age': age,
-                'sex': sex,
-                'cp': cp,
-                'trestbps': trestbps,
-                'chol': chol,
-                'fbs': fbs,
-                'restecg': restecg,
-                'thalach': thalach,
-                'exang': exang,
-                'oldpeak': oldpeak,
-                'slope': slope,
-                'ca': ca,
-                'thal': thal,
-            }
-        ]
-    },
-    "GlobalParameters": {}
-}
+    #DEFINIR LAS VARIABLES QUE NUESTRO MODELO CONOCE
 
-# Botón predict
-if st.button('Chances of heart disease'):
-    result = get_prediction(data)
+    age = st.number_input('Age', min_value=1 , max_value=90, value=1)
+    sex = st.selectbox('Sex', ['1', '0'])
+    cp = st.selectbox('Chest pain', ['1', '2', '3', '4'])
+    trestbps = st.number_input('Resting blood pressure', min_value=90, max_value=180, value=90)
+    chol = st.number_input('Cholesterol', min_value=150, max_value=450, value=150)
+    fbs = st.selectbox('Fasting blood sugar > 120 mg/dl', ['0', '1'])
+    restecg = st.selectbox('Resting electrocardiographic results', ['0', '1', '2'])
+    thalach = st.number_input('Maximum heart rate achieved', min_value=90, max_value=200, value=90)
+    exang = st.selectbox('Exercise induced angina', ['0', '1'])
+    oldpeak = st.number_input('ST depression induced by exercise relative to rest', min_value=0.0, max_value=6.2, value=0.1)
+    slope = st.selectbox('The slope of the peak exercise ST segment', ['1', '2', '3'])
+    ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy', ['0', '1', '2', '3'])
+    thal = st.selectbox('Thalassemia', ['3', '6', '7'])
 
-    if result:
-        st.write('Chances of heart disease: ', result['Results']['WebServiceOutput0'][0]['predicted_heart_condition'])
-    else:
-        st.write('Something went wrong')
 
-# Show prediction model dictionary
+    #DICCIONARIO DE DATOS
+    data = {
+        "Inputs": {
+            "input1": [
+                {
+                    'age': age,
+                    'sex': sex,
+                    'cp': cp,
+                    'trestbps': trestbps,
+                    'chol': chol,
+                    'fbs': fbs,
+                    'restecg': restecg,
+                    'thalach': thalach,
+                    'exang': exang,
+                    'oldpeak': oldpeak,
+                    'slope': slope,
+                    'ca': ca,
+                    'thal': thal,
+                }
+            ]
+        },
+        "GlobalParameters": {}
+    }
+
+    # Botón predict
+    if st.button('Chances of heart disease'):
+        result = get_prediction(data)
+
+        if result:
+            st.write('Chances of heart disease: ', result['Results']['WebServiceOutput0'][0]['predicted_heart_condition'])
+        else:
+            st.write('Something went wrong')
+
+ # Show prediction model dictionary
 if menu_option == "Prediction Model Dictionary":
     st.write("### Prediction Model Dictionary")
     st.write('''
-                •	Exang (Exercise induced angina): Refers to whether the patient experienced angina (chest pain) induced by exercise during a stress test. It’s typically a binary value: 
+            •	Exang (Exercise induced angina): Refers to whether the patient experienced angina (chest pain) induced by exercise during a stress test. It’s typically a binary value: 
                     
-    - 1: The patient experienced angina.
-    - 0: The patient did not experience angina.
+        - 1: The patient experienced angina.
+        - 0: The patient did not experience angina.
              
-•	Old Peak (Depression of the ST segment): This variable measures the depression of the ST segment in an electrocardiogram (ECG) after exercise. ST segment depression can indicate ischemia (lack of oxygen in the heart muscle). 
+    •	Old Peak (Depression of the ST segment): This variable measures the depression of the ST segment in an electrocardiogram (ECG) after exercise. ST segment depression can indicate ischemia (lack of oxygen in the heart muscle). 
     
-    - The value of "Old Peak" refers to how many millimeters the ST segment is depressed.
+        - The value of "Old Peak" refers to how many millimeters the ST segment is depressed.
              
 •	Slope (Slope of the ST segment during exercise): This value measures the slope of the ST segment during exercise in a stress test. 
     
