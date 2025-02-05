@@ -36,13 +36,15 @@ with st.sidebar:
             "Introduction",
             "Data Preview",
             "Prediction Model Dictionary",
-            "Prediction Model"
+            "Prediction Model",
+            "Bibliography"
         ],
         icons=[
             'heart',
             'table',
             'check-square',
-            'robot'
+            'robot',
+            'book'
         ],
         menu_icon="stethoscope",  
         default_index=0,
@@ -194,7 +196,7 @@ if sub_menu_option == "Hospital Data":
         st.error(f"Error al cargar la imagen: {e}")
 
     st.write('''
-    The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with...
+    The graph shows a positive relationship between age and cardiovascular disease, with higher ages (45-65 years) more commonly associated with the presence of the disease. This aligns with the understanding that cardiovascular risk increases with age.
     ''')
     
 
@@ -460,25 +462,24 @@ if menu_option == "Prediction Model":
 
     #CONFIGURACION DE LA APP
     st.title('Heart disease prediction')
-    st.write('This is a simple price prediction app')
+    st.write('Heart disease prediction app')
 
 
     #DEFINIR LAS VARIABLES QUE NUESTRO MODELO CONOCE
-
+    
     age = st.number_input('Age', min_value=1 , max_value=90, value=1)
-    sex = st.selectbox('Sex', ['1', '0'])
-    cp = st.selectbox('Chest pain', ['1', '2', '3', '4'])
+    sex = st.selectbox('Sex (1= Male, 0= Female)', ['1', '0'])
+    cp = st.selectbox('Chest pain (1= typical angina, 2= atypical angina, 3= non-anginal pain, 4= Asymptomatic)', ['1', '2', '3', '4'])
     trestbps = st.number_input('Resting blood pressure', min_value=90, max_value=180, value=90)
     chol = st.number_input('Cholesterol', min_value=150, max_value=450, value=150)
-    fbs = st.selectbox('Fasting blood sugar > 120 mg/dl', ['0', '1'])
-    restecg = st.selectbox('Resting electrocardiographic results', ['0', '1', '2'])
-    thalach = st.number_input('Maximum heart rate achieved', min_value=90, max_value=200, value=90)
-    exang = st.selectbox('Exercise induced angina', ['0', '1'])
+    fbs = st.selectbox('Fasting blood sugar > 120 mg/dl (1 = True; 0 = False)', ['0', '1'])
+    restecg = st.selectbox('Resting electrocardiographic results (0= Normal, 1= ST-T wave abnormalities, 2= Left ventricular hypertrophy)', ['0', '1', '2'])
+    thalach = st.number_input('Maximum heart rate achieved ', min_value=90, max_value=200, value=90)
+    exang = st.selectbox('Exercise induced angina (1= The patient experienced angina, 0= The patient did not experience angina.)', ['0 ', '1 '])
     oldpeak = st.number_input('ST depression induced by exercise relative to rest', min_value=0.0, max_value=6.2, value=0.1)
-    slope = st.selectbox('The slope of the peak exercise ST segment', ['1', '2', '3'])
-    ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy', ['0', '1', '2', '3'])
-    thal = st.selectbox('Thalassemia', ['3', '6', '7'])
-
+    slope = st.selectbox('The slope of the peak exercise ST segment (1= Upsloping, 2= Flat, 3= Downsloping)', ['1', '2', '3'])
+    ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy (0= No blockage, 1, 2, or 3= Indicates increasing degrees of obstruction)', ['0', '1', '2', '3'])
+    thal = st.selectbox('Thalassemia (3= Normal, 6= Fixed defect, 7= Reversible defect)', ['3', '6', '7'])
 
     #DICCIONARIO DE DATOS
     data = {
@@ -546,6 +547,7 @@ if menu_option == "Prediction Model Dictionary":
     - 0: Normal (no abnormality detected in the ECG at rest).
     - 1: ST-T wave abnormality (changes in the ST-T segment that may indicate ischemia).
     - 2: Left ventricular hypertrophy (enlargement of the left ventricle, often due to high blood pressure or heart disease).
+    
 •	Thalach (Maximum heart rate achieved): Refers to the highest heart rate achieved during a stress test or physical exertion. 
     
     - The value is expressed in beats per minute (bpm) and reflects how the heart responds to exercise. 
@@ -566,3 +568,12 @@ Fbs = Fasting blood sugar > 120 mg/dl (1 = true; 0 = false)
 Restecg = Resting electrocardiographic results (values 0, 1, 2)
              
 Thalach = Maximum heart rate achieved''')
+
+if menu_option == "Bibliography":
+    st.title('Bibliography')
+    st.write('''
+        - World Heart Federation. (2023, 10 agosto). Cardiovascular Disease (CVD) | World Heart Federation. https://world-heart-federation.org/what-is-cvd/
+        - Cardiovascular Disease dataset. (2019, 20 enero). Kaggle. https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset
+        - Cardiovascular Diseases Risk Prediction Dataset. (2023, 3 julio). Kaggle. https://www.kaggle.com/datasets/alphiree/cardiovascular-diseases-risk-prediction-dataset/data
+        - Data. (s. f.). https://www.who.int/data/inequality-monitor/data 
+        - Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). Heart Disease [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X.''')
