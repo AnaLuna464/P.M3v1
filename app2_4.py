@@ -144,11 +144,28 @@ if menu_option == "Introduction":
 #Verify if the user selected "PBI" in the submenu
 if sub_menu_option == "PBI":
     st.title("🗺️ Power BI Dashboard")
+    st.write('''
+            The data set used for this exercise is from the WHO Data Repository.  The data set contains indicators related to noncommunicable diseases and risk factors disaggregated by sex, economic status and place of residence.
+
+    Noncommunicable diseases (NCDs), such as heart disease, stroke, cancer, chronic respiratory diseases and diabetes, are the leading causes of mortality in the world. Some of the main factors related to NCD are:
+    
+    •	tobacco use.
+    
+    •	unhealthy diets, including excess salt, sugar, and fats.
+    
+    •	harmful use of alcohol.
+    
+    •	insufficient physical activity.
+''')
+    (st.write("The dashboard includes interactive visualizations that allow users to explore the data by country, region, and other relevant factors. It also provides insights into the risk factors associated with cardiovascular diseases."))
+    
     powerbi_url = "https://app.powerbi.com/view?r=eyJrIjoiYzIwYjA5ODUtZTZkMS00ZGQwLWFjMTQtMWNiNTlhNzNlNDlhIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9"
     st.markdown(f"""
         <iframe title="Mapa Power BI" width="900" height="600"
         src="{powerbi_url}" frameborder="0" allowFullScreen="true"></iframe>
     """, unsafe_allow_html=True)
+    
+    st.write("Disclaimer:The estimates presented may differ from, and should not be regarded as, the official national statistics of individual WHO Member States.")
 
 if sub_menu_option == "Hospital Data":
     st.title("📊 Hospital Data")
