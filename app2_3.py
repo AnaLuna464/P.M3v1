@@ -13,6 +13,7 @@ from matplotlib import ticker
 import plotly.graph_objects as go  
 import os 
 import json
+import urllib.request
 
 
 # Data import and Pandas dataframe (CVD_cleaned.xlsx)
@@ -449,39 +450,80 @@ if sub_menu_option == "US Data":
 # Show prediction model
 if menu_option == "Prediction Model":
     st.write("### Prediction based on entered data")
-    columns_to_predict = st.multiselect("Select the information for the prediction model", df.columns)
-    target = st.selectbox("Select the target variable", df.columns)
-    
-    if columns_to_predict and target:
-        from sklearn.model_selection import train_test_split
-        from sklearn.ensemble import RandomForestClassifier
-        from sklearn.metrics import accuracy_score
-    
-        # Prepare data
-        X = df[columns_to_predict]
-        y = df[target]
-    
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-        # Train model
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-    
-        # Evaluation
-        y_pred = model.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
-        st.write(f"Model accuracy: {accuracy:.2f}")
-    
-        # Predict new data
-        st.write("### Enter new data for prediction")
-        user_input = {}
-        for col in columns_to_predict:
-            user_input[col] = st.number_input(f"{col}", value=float(X[col].mean()))
-    
-        if st.button("Predict"):
-            user_df = pd.DataFrame([user_input])
-            prediction = model.predict(user_df)[0]
-            st.write(f"The prediction for the entered data is: {prediction}")
+    #PRIMERO LA URL QUE CONDUCE A NUESTRO MODELO MAS LA CLAVE API QUE NOS PERMITE ACCEDER A EL
+url = 'http://11bb7995-16fc-4438-92c4-60f56e3d910d.eastus2.azurecontainer.io/score' # URL of the API
+api_key = '1SWzSyGfAVTb56Tf2gjlEB0ENaKCaCtO'
+ 
+#FUNCION DE PREDICCION
+def get_prediction(data):
+    body = str.encode(json.dumps(data))
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+    req = urllib.request.Request(url, body, headers)
+ 
+    try:
+        response = urllib.request.urlopen(req)
+        result = response.read()
+        return json.loads(result)
+    except urllib.error.HTTPError as error:
+        print("The request failed with status code: " + str(error.code))
+        print(error.info())
+        print(json.loads(error.read()))
+        return None
+ 
+#CONFIGURACION DE LA APP
+st.title('Heart disease prediction')
+st.write('This is a simple price prediction app')
+ 
+ 
+#DEFINIR LAS VARIABLES QUE NUESTRO MODELO CONOCE
+ 
+age = st.number_input('Age', min_value=1 , max_value=90, value=1)
+sex = st.selectbox('Sex', ['1', '0'])
+cp = st.selectbox('Chest pain', ['1', '2', '3', '4'])
+trestbps = st.number_input('Resting blood pressure', min_value=90, max_value=180, value=90)
+chol = st.number_input('Cholesterol', min_value=150, max_value=450, value=150)
+fbs = st.selectbox('Fasting blood sugar > 120 mg/dl', ['0', '1'])
+restecg = st.selectbox('Resting electrocardiographic results', ['0', '1', '2'])
+thalach = st.number_input('Maximum heart rate achieved', min_value=90, max_value=200, value=90)
+exang = st.selectbox('Exercise induced angina', ['0', '1'])
+oldpeak = st.number_input('ST depression induced by exercise relative to rest', min_value=0.0, max_value=6.2, value=0.1)
+slope = st.selectbox('The slope of the peak exercise ST segment', ['1', '2', '3'])
+ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy', ['0', '1', '2', '3'])
+thal = st.selectbox('Thalassemia', ['3', '6', '7'])
+ 
+ 
+#DICCIONARIO DE DATOS
+data = {
+    "Inputs": {
+        "input1": [
+            {
+                'age': age,
+                'sex': sex,
+                'cp': cp,
+                'trestbps': trestbps,
+                'chol': chol,
+                'fbs': fbs,
+                'restecg': restecg,
+                'thalach': thalach,
+                'exang': exang,
+                'oldpeak': oldpeak,
+                'slope': slope,
+                'ca': ca,
+                'thal': thal,
+            }
+        ]
+    },
+    "GlobalParameters": {}
+}
+ 
+# Botón predict
+if st.button('Chances of heart disease'):
+    result = get_prediction(data)
+ 
+    if result:
+        st.write('Chances of heart disease: ', result['Results']['WebServiceOutput0'][0]['predicted_heart_condition'])
+    else:
+        st.write('Something went wrong')
 
 # Show prediction model dictionary
 if menu_option == "Prediction Model Dictionary":
