@@ -23,6 +23,25 @@ The aim of the project is to explore, process and model data related to cardiova
 - **Power Bi** for data visualization 
 - **GitHub** for version control  
 - **Dash / Streamlit (optional)** for interactive visualizations
+
+  💡 Developed by:
+
+Ana Laura Luna Sánchez
+
+Andrea Corbalán Porto
+
+Carlos Andrés Pareja
+
+Paula Andrea Acosta Sánchez
+
+## 💾 Repository structure
+- **Main branch**: Introduction to the project.
+- Data sets used for the research, processing, data cleaning and EDA of the data.
+- Power-BI**: Includes the Dataset from which the data cleaning and processing was performed and the interactive map in the Power-Bi platform.
+- Prediction Model**: Steps executed to perform the prediction model used for the application.
+- Streamlit**: Includes the development of the code for the deployment of the information in Streamlit cloud.
+
+Translated with DeepL.com (free version)
   
 # P.M3v1 (ESP)
 
@@ -50,11 +69,19 @@ El objetivo del proyecto es explorar, procesar y modelar datos relacionados con 
 - **GitHub** para el versionado del código  
 - **Streamlit** para visualizaciones interactivas
 
-  💡 Este proyecto fue desarrollado por:  
+  💡 Desarrollado por:  
 - **Ana Laura Luna Sánchez**
 - **Andrea Corbalán Porto**
 - **Carlos Andrés Pareja**
 - **Paula Andrea Acosta Sánchez**
+
+## 💾 Estructura del repositorio
+- **Main branch**: Introduccion al proyecto.
+- **EDA**: Data sets utilizados para la investigación, procesamiento, limpieza de datos y EDA de los mismos.
+- **Power-BI**: Incluye el Dataset del cual se realizo la limpieza y procesamiento de datos y el mapa interactivo en la plataforma Power-Bi.
+- **Prediction Model**: Pasos ejecutados para realizar el modelo de predicción empleado para la aplicación.
+- **Streamlit**: Inclyude el desarrollo del codigo para el despliegue de la infromacion en Streamlit cloud. 
+
 
 
 ![heart](https://github.com/user-attachments/assets/67149e43-7176-4d68-9770-3e66cf248523)
