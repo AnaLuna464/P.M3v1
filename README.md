@@ -41,7 +41,12 @@ Paula Andrea Acosta Sánchez
 - Prediction Model**: Steps executed to perform the prediction model used for the application.
 - Streamlit**: Includes the development of the code for the deployment of the information in Streamlit cloud.
 
-Translated with DeepL.com (free version)
+## 📔 Conclusions:
+
+The developed project effectively addresses the issue of cardiovascular diseases and was created as a clinical support for nursing staff and medical students, providing an interactive platform for the assessment and understanding of cardiovascular diseases. Through this tool, professionals in training can improve their knowledge of risk factors, early diagnosis and prevention strategies, thus contributing to better patient care.
+The application not only facilitates theoretical learning through information based on scientific evidence, but also allows the simulation of clinical scenarios and the analysis of relevant data in medical practice. This is especially useful for nurses, who play a key role in the early detection and initial management of these diseases.
+It is recommended to continue optimizing the tool, incorporating new functionalities such as interactive clinical cases, decision support algorithms and constant updates based on recent medical guidelines. In this way, the platform will be able to continue fulfilling its purpose of strengthening the training of future health professionals and improving the quality of cardiovascular care.
+
   
 # P.M3v1 (ESP)
 
@@ -85,4 +90,11 @@ El objetivo del proyecto es explorar, procesar y modelar datos relacionados con 
 
 
 ![heart](https://github.com/user-attachments/assets/67149e43-7176-4d68-9770-3e66cf248523)
+
+## 📔 Conclusiones:
+
+El proyecto desarrollado aborda de manera efectiva la problemática de las enfermedades cardiovasculares y se creó como apoyo clínico para el personal de enfermería y los estudiantes de medicina, proporcionando una plataforma interactiva para la evaluación y comprensión de las enfermedades cardiovasculares. A través de esta herramienta, los profesionales en formación pueden mejorar su conocimiento sobre factores de riesgo, diagnóstico temprano y estrategias de prevención, contribuyendo así a una mejor atención al paciente.
+La aplicación no solo facilita el aprendizaje teórico mediante información basada en evidencia científica, sino que también permite la simulación de escenarios clínicos y el análisis de datos relevantes en la práctica médica. Esto resulta especialmente útil para el personal de enfermería, quienes desempeñan un papel clave en la detección temprana y el manejo inicial de estas enfermedades.
+Se recomienda continuar con la optimización de la herramienta, incorporando nuevas funcionalidades como casos clínicos interactivos, algoritmos de apoyo en la toma de decisiones y actualizaciones constantes basadas en guías médicas recientes. De este modo, la plataforma podrá seguir cumpliendo su propósito de fortalecer la formación de los futuros profesionales de la salud y mejorar la calidad de la atención cardiovascular.
+
 
