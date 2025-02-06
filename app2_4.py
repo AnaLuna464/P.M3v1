@@ -481,18 +481,18 @@ if menu_option == "Prediction Model":
     
     # Define the variables known to the model
     age = st.number_input('Age', min_value=1, max_value=90, value=1)
-    sex = st.selectbox('Sex', ['1', '0'])
-    cp = st.selectbox('Chest pain', ['1', '2', '3', '4'])
-    trestbps = st.number_input('Resting blood pressure', min_value=90, max_value=180, value=90)
+    sex = st.selectbox('Sex (1= Male, 0= Female)', ['1', '0'])
+    cp = st.selectbox('Chest pain (1= typical angina, 2= atypical angina, 3= non-anginal pain, 4= Asymptomatic)', ['1', '2', '3', '4'])
+    trestbps = st.number_input('Resting blood pressure ', min_value=90, max_value=180, value=90)
     chol = st.number_input('Cholesterol', min_value=150, max_value=450, value=150)
-    fbs = st.selectbox('Fasting blood sugar > 120 mg/dl', ['0', '1'])
-    restecg = st.selectbox('Resting electrocardiographic results', ['0', '1', '2'])
+    fbs = st.selectbox('Fasting blood sugar > 120 mg/dl (1 = True; 0 = False)', ['0', '1'])
+    restecg = st.selectbox('Resting electrocardiographic results (0= Normal, 1= ST-T wave abnormalities, 2= Left ventricular hypertrophy)', ['0', '1', '2'])
     thalach = st.number_input('Maximum heart rate achieved', min_value=90, max_value=200, value=90)
-    exang = st.selectbox('Exercise induced angina', ['0', '1'])
+    exang = st.selectbox('Exercise induced angina (1= The patient experienced angina, 0= The patient did not experience angina.)', ['0', '1'])
     oldpeak = st.number_input('ST depression induced by exercise relative to rest', min_value=0.0, max_value=6.2, value=0.1)
-    slope = st.selectbox('The slope of the peak exercise ST segment', ['1', '2', '3'])
-    ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy', ['0', '1', '2', '3'])
-    thal = st.selectbox('Thalassemia', ['3', '6', '7'])
+    slope = st.selectbox('The slope of the peak exercise ST segment (1= Upsloping, 2= Flat, 3= Downsloping)', ['1', '2', '3'])
+    ca = st.selectbox('Number of major vessels (0-3) colored by flourosopy (0= No blockage, 1, 2, or 3= Indicates increasing degrees of obstruction)', ['0', '1', '2', '3'])
+    thal = st.selectbox('Thalassemia (3= Normal, 6= Fixed defect, 7= Reversible defect)', ['3', '6', '7'])
     
     # Data dictionary
     data = {
